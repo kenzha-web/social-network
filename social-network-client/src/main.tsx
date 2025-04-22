@@ -1,12 +1,26 @@
 import { StrictMode } from "react"
 import { createRoot } from "react-dom/client"
 import { Provider } from "react-redux"
-import { App } from "./App"
 import { store } from "./app/store"
 import "./index.css"
 import {HeroUIProvider} from "@heroui/react";
+import {createBrowserRouter, RouterProvider} from "react-router-dom";
+import {ThemeProvider} from "./components/theme-provider";
+import {AuthGuard} from "./features/user/authGuard.tsx";
+import {Auth} from "./pages/auth";
 
-const container = document.getElementById("root")
+const container = document.getElementById("root");
+
+const router = createBrowserRouter([
+  {
+    path: '/auth',
+    element: <Auth />
+  },
+  {
+    path: '/',
+    element: <h1>Layout</h1>
+  }
+])
 
 if (container) {
   const root = createRoot(container)
@@ -15,7 +29,11 @@ if (container) {
     <StrictMode>
       <Provider store={store}>
         <HeroUIProvider>
-          <App />
+          <ThemeProvider>
+            <AuthGuard>
+              <RouterProvider router={router} />
+            </AuthGuard>
+          </ThemeProvider>
         </HeroUIProvider>
       </Provider>
     </StrictMode>,
