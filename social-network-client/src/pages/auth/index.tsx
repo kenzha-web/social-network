@@ -2,8 +2,8 @@ import { Card, CardBody } from "@heroui/card";
 import { Tabs, Tab } from "@heroui/tabs";
 import { useState } from "react"
 import { useAuthGuard } from "../../hooks/useAuthGuard"
-import {Login} from "../../features/user/login.tsx";
-import {Register} from "../../features/user/register.tsx";
+import {Login} from "../../features/user/login";
+import {Register} from "../../features/user/register";
 
 export const Auth = () => {
 	const [selected, setSelected] = useState("login")

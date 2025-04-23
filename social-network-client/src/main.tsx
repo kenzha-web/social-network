@@ -6,8 +6,9 @@ import "./index.css"
 import {HeroUIProvider} from "@heroui/react";
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import {ThemeProvider} from "./components/theme-provider";
-import {AuthGuard} from "./features/user/authGuard.tsx";
+import {AuthGuard} from "./features/user/authGuard";
 import {Auth} from "./pages/auth";
+import {Layout} from "./components/layout";
 
 const container = document.getElementById("root");
 
@@ -18,7 +19,7 @@ const router = createBrowserRouter([
   },
   {
     path: '/',
-    element: <h1>Layout</h1>
+    element: <Layout />
   }
 ])
 

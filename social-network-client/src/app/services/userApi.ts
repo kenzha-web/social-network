@@ -1,5 +1,5 @@
-import {api} from "./api.ts";
-import {User} from "../types.ts";
+import { api } from "./api";
+import { User } from "../types";
 
 export const userApi = api.injectEndpoints({
 	endpoints: (builder) => ({

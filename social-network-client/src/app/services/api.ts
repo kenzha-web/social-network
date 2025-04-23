@@ -1,9 +1,10 @@
 import {createApi, fetchBaseQuery, retry} from "@reduxjs/toolkit/query/react";
-import {BASE_URL} from "../../constants.ts";
-import {RootState} from "../store.ts";
+import {BASE_URL} from "../../constants";
+import {RootState} from "../store";
 
 const baseQuery = fetchBaseQuery({
 	baseUrl: `${BASE_URL}/api`,
+	credentials: 'include',
 	prepareHeaders: (headers, { getState }) => {
 		const token = ( getState() as RootState ).user.token || localStorage.getItem("token")
 

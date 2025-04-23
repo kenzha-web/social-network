@@ -8,6 +8,7 @@ services:
       - db
     environment:
       DATABASE_URL: 'mongodb://admin:admin@db:27017/mydatabase?authSource=admin&directConnection=true'
+
   db:
     image: prismagraphql/mongo-single-replica:4.4.3-bionic
     ports:
