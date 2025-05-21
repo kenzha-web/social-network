@@ -1,8 +1,8 @@
 import type { Action, ThunkAction } from "@reduxjs/toolkit"
 import { configureStore } from "@reduxjs/toolkit"
-import {api} from "./services/api.ts";
-import user from "../features/user/userSlice.tsx"
-import {listenerMiddleware} from "../middleware/auth.ts";
+import {api} from "./services/api";
+import user from "../features/user/userSlice"
+import {listenerMiddleware} from "../middleware/auth";
 
 export const store = configureStore({
   reducer: {

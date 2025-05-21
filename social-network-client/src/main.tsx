@@ -9,6 +9,7 @@ import {ThemeProvider} from "./components/theme-provider";
 import {AuthGuard} from "./features/user/authGuard";
 import {Auth} from "./pages/auth";
 import {Layout} from "./components/layout";
+import {Posts} from "./pages/posts";
 
 const container = document.getElementById("root");
 
@@ -18,8 +19,14 @@ const router = createBrowserRouter([
     element: <Auth />
   },
   {
-    path: '/',
-    element: <Layout />
+    path: "/",
+    element: <Layout />,
+    children: [
+      {
+        path: "",
+        element: <Posts />,
+      },
+    ],
   }
 ])
 
