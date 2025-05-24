@@ -10,6 +10,7 @@ import {AuthGuard} from "./features/user/authGuard";
 import {Auth} from "./pages/auth";
 import {Layout} from "./components/layout";
 import {Posts} from "./pages/posts";
+import {CurrentPost} from "./pages/current-post";
 
 const container = document.getElementById("root");
 
@@ -25,6 +26,11 @@ const router = createBrowserRouter([
       {
         path: "",
         element: <Posts />,
+
+      },
+      {
+        path: "posts/:id",
+        element: <CurrentPost />,
       },
     ],
   }
