@@ -11,6 +11,7 @@ import {Auth} from "./pages/auth";
 import {Layout} from "./components/layout";
 import {Posts} from "./pages/posts";
 import {CurrentPost} from "./pages/current-post";
+import {UserProfile} from "./pages/user-profile";
 
 const container = document.getElementById("root");
 
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
       {
         path: "posts/:id",
         element: <CurrentPost />,
+      },
+      {
+        path: "users/:id",
+        element: <UserProfile />,
       },
     ],
   }
