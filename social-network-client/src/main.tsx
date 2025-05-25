@@ -12,6 +12,8 @@ import {Layout} from "./components/layout";
 import {Posts} from "./pages/posts";
 import {CurrentPost} from "./pages/current-post";
 import {UserProfile} from "./pages/user-profile";
+import {Followers} from "./components/followers";
+import {Following} from "./components/following";
 
 const container = document.getElementById("root");
 
@@ -36,6 +38,14 @@ const router = createBrowserRouter([
       {
         path: "users/:id",
         element: <UserProfile />,
+      },
+      {
+        path: "followers",
+        element: <Followers />,
+      },
+      {
+        path: "following",
+        element: <Following />,
       },
     ],
   }
